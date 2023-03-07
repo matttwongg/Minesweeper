@@ -147,7 +147,7 @@ public class MSButton
           displayLosingMessage();
         }else if(mines.contains(this)&&over){
         }else if(countMines(myRow, myCol)>0){
-          buttons[myRow][myCol].setLabel(Integer.toString(countMines(myRow, myCol)));
+          buttons[myRow][myCol].setLabel(countMines(myRow, myCol));
         }else{
           for(int a=-1;a<=1;a++){
             for(int b=-1;b<=1;b++){
@@ -164,11 +164,11 @@ public class MSButton
       if (flagged)
             fill(0);
         else if( clicked && mines.contains(this) ) 
-            fill(255,0,0);
+            fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
         else if(clicked)
-            fill( 200 );
+            fill( 200,100,200 );
         else 
-            fill( 100 );
+            fill( 100,200,200 );
 
         rect(x, y, width, height);
         fill(0);
